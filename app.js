@@ -8,10 +8,12 @@ const app = express();
 
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+// const authMiddleware = require('./middleware/auth');
 
 // middleware
 app.use(express.static('./public'));
 app.use(express.json());
+// app.use(authMiddleware)
 
 app.use('/api/v1', mainRouter)
 
